@@ -1,0 +1,33 @@
+.container
+  .jumbotron
+    .page-header
+      .text-center
+        %h1 Sign In
+    .form-horizontal
+      =form_for @user, url: sign_in_path, html: { class: 'sign_in-from'} do |f|
+
+        .form-group
+          -if @user.errors.any?
+            .alert.alert-danger
+              -@user.errors.full_messages.each do |message|
+                =message
+
+        .form-group
+          =f.label :email, class: 'col-sm-3 control-label'
+          .col-sm-6
+            =f.email_field :email, class: 'form-control'
+
+        .form-group
+          =f.label :password, class: 'col-sm-3 control-label'
+          .col-sm-6
+            =f.password_field :password, class: 'form-control'
+
+        .form-group
+          .col-sm-offset-3.col-sm-6.text-center
+            =f.submit 'Sign In', class: 'btn btn-primary'
+
+        .form-group
+          .col-sm-offset-3.col-sm-6
+            .well.text-center
+              %p New User?
+              =link_to 'Sign Up', sign_up_path, class: 'btn btn-info'

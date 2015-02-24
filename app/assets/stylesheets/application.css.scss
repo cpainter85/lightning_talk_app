@@ -16,3 +16,11 @@
  // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+body { padding-top: 70px; }
+
+.lightning_bolt {
+  max-height: 3em;
+  max-width: 3em;
+  padding-top: 1em;
+}

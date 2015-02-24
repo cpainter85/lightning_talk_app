@@ -1,0 +1,43 @@
+.container
+  .jumbotron
+    .page-header
+      .text-center
+        %h1 Sign Up
+
+    .form-horizontal
+      =form_for @user, url: sign_up_path do |f|
+
+        .form-group
+          -if@user.errors.any?
+            .alert-alert-danger
+              -@user.errors.full_messages.each do |message|
+                =message
+
+        .form-group
+          =f.label :first_name, class: 'col-sm-3 control-label'
+          .col-sm-6
+            =f.text_field :first_name, class: 'form-control'
+
+        .form-group
+          =f.label :last_name, class: 'col-sm-3 control-label'
+          .col-sm-6
+            =f.text_field :last_name, class: 'form-control'
+
+        .form-group
+          =f.label :email, class: 'col-sm-3 control-label'
+          .col-sm-6
+            =f.email_field :email, class: 'form-control'
+
+        .form-group
+          =f.label :password, class: 'col-sm-3 control-label'
+          .col-sm-6
+            =f.password_field :password, class: 'form-control'
+
+        .form-group
+          =f.label :password_confirmation, class: 'col-sm-3 control-label'
+          .col-sm-6
+            =f.password_field :password_confirmation, class: 'form-control'
+
+        .form-group
+          .col-sm-offset-3.col-sm-6.text-center
+            =f.submit 'Sign Up', class: 'btn btn-primary'

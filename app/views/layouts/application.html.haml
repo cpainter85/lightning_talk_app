@@ -6,5 +6,24 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
+    %nav.navbar.navbar-inverse.navbar-fixed-top
+      .container-fluid.navbar-header
+        .pull-left
+          =image_tag("lightning_bolt.png", class: 'lightning_bolt')
 
-  =yield
+        %a.navbar-brand{:href => "#"}
+          Lightning Talks
+
+    -# %nav.navbar.navbar-inverse.navbar-fixed-top
+    -#   .container-fluid
+    -#     .navbar-header
+    -#       %a.nav-brand{:href => ""}
+    -#         Lightning Talks
+            -# =image_tag("lightning_bolt.png", class: 'lightning_bolt')
+
+
+
+    .container
+      -if notice
+        .alert.alert-success=notice
+    =yield
