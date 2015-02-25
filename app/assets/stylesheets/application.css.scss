@@ -17,10 +17,19 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-body { padding-top: 70px; }
+body { padding-top: 100px; }
 
 .lightning_bolt {
   max-height: 3em;
   max-width: 3em;
   padding-top: 1em;
+}
+
+.nav.navbar-nav.navbar-left {
+  padding-top: 1em;
+}
+
+.sign_out_button {
+  max-height: 3em;
+//   // max-width: 3em;
 }

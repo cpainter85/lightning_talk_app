@@ -7,12 +7,19 @@
     = csrf_meta_tags
   %body
     %nav.navbar.navbar-inverse.navbar-fixed-top
-      .container-fluid.navbar-header
-        .pull-left
-          =image_tag("lightning_bolt.png", class: 'lightning_bolt')
+      .container
+        .navbar-header
+          %ul.nav.navbar-nav.navbar-left
+            %li=image_tag("lightning_bolt.png", class: 'lightning_bolt')
 
-        %a.navbar-brand{:href => "#"}
-          Lightning Talks
+            %li
+              %a.navbar-brand{:href => "#"}
+                Lightning Talks
+        .navbar-form
+          %ul.nav.navbar-nav.navbar-right
+            %li
+              -if current_user
+                =link_to 'Sign Out', sign_out_path, class: 'btn btn-default navbar-btn sign_out_button'
 
     -# %nav.navbar.navbar-inverse.navbar-fixed-top
     -#   .container-fluid

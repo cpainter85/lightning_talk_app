@@ -4,27 +4,24 @@
       .text-center
         %h1 Sign In
     .form-horizontal
-      =form_for @user, url: sign_in_path, html: { class: 'sign_in-from'} do |f|
-
+      =form_tag sign_in_path do |f|
         .form-group
-          -if @user.errors.any?
+          -if @sign_in_error
             .alert.alert-danger
-              -@user.errors.full_messages.each do |message|
-                =message
+              =@sign_in_error
+        .form-group
+          =label_tag :email, nil, class: 'col-sm-3 control-label'
+          .col-sm-6
+            =email_field_tag :email, nil, class: 'form-control'
 
         .form-group
-          =f.label :email, class: 'col-sm-3 control-label'
+          =label_tag :password, nil, class: 'col-sm-3 control-label'
           .col-sm-6
-            =f.email_field :email, class: 'form-control'
-
-        .form-group
-          =f.label :password, class: 'col-sm-3 control-label'
-          .col-sm-6
-            =f.password_field :password, class: 'form-control'
+            =password_field_tag :password, nil, class: 'form-control'
 
         .form-group
           .col-sm-offset-3.col-sm-6.text-center
-            =f.submit 'Sign In', class: 'btn btn-primary'
+            =submit_tag 'Sign In', class: 'btn btn-primary'
 
         .form-group
           .col-sm-offset-3.col-sm-6
