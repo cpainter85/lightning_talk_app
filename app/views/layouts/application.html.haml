@@ -10,16 +10,21 @@
       .container
         .navbar-header
           %ul.nav.navbar-nav.navbar-left
-            %li=image_tag("lightning_bolt.png", class: 'lightning_bolt')
-
             %li
-              %a.navbar-brand{:href => "#"}
+              =image_tag("lightning_bolt.png", class: 'lightning_bolt')
+            .navbar-brand
+              %li
+                -# %a{:href => "#"}
                 Lightning Talks
         .navbar-form
           %ul.nav.navbar-nav.navbar-right
-            %li
-              -if current_user
-                =link_to 'Sign Out', sign_out_path, class: 'btn btn-default navbar-btn sign_out_button'
+            -if current_user
+              %li
+                %a{:href => '#'}
+                  ="#{current_user.first_name} #{current_user.last_name}"
+              %li
+                %button.btn.btn-default.navbar-btn
+                  =link_to 'Sign Out', sign_out_path
 
     -# %nav.navbar.navbar-inverse.navbar-fixed-top
     -#   .container-fluid

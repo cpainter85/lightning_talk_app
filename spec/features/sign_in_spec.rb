@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'Sign In' do
   scenario 'User can sign in' do
-    User.create!(
+    user = User.create!(
       first_name: 'Charlie',
       last_name: 'Painter',
       email: 'cp123@email.com',
@@ -17,8 +17,10 @@ feature 'Sign In' do
 
     expect(page).to have_content('You have successfully logged in!')
 
+    expect(user.id).to eq(session[:user_id])
+    save_and_open_page
+
   end
 
-  scenario 'User must fill in email and password' do
-  end
+
 end
