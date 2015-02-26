@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'haml'
 gem 'bootstrap-sass', '~> 3.3.3'
+gem 'rails_12factor', group: :production
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use postgresql as the database for Active Record
