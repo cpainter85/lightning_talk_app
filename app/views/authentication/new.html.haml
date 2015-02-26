@@ -5,10 +5,10 @@
         %h1 Sign In
     .form-horizontal
       =form_tag sign_in_path do |f|
-        .form-group
-          -if @sign_in_error
-            .alert.alert-danger
-              =@sign_in_error
+        -# .form-group
+        -#   -if @sign_in_error
+        -#     .alert.alert-danger
+        -#       =@sign_in_error
         .form-group
           =label_tag :email, nil, class: 'col-sm-3 control-label'
           .col-sm-6
