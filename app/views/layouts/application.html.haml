@@ -24,8 +24,8 @@
                 %a{:href => '#'}
                   ="#{current_user.first_name} #{current_user.last_name}"
               %li
-                %button.btn.btn-default.navbar-btn
-                  =link_to 'Sign Out', sign_out_path
+                %button.btn.btn-default.navbar-btn=link_to 'Sign Out', sign_out_path
+
 
     -# %nav.navbar.navbar-inverse.navbar-fixed-top
     -#   .container-fluid
